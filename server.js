@@ -23,6 +23,7 @@ const schemazzed  = new Schema({
 });
 //model
 const newUser = mongoose.model ('scammazzed', schemazzed);
+/*
 //saving data
 const data1 = {
   email:"spencywency89@gmail.com",
@@ -40,7 +41,7 @@ newUser2.save((error)=>
   }
 });
 
-
+*/
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'));
@@ -74,8 +75,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dashboard', (req, res) => {
-  // res.render('dashboard.html')
-  // res.sendFile('./view/dashboard.html');
   fs.readFile('./views/dashboard.html', function (err, data) {
     res.writeHead(200, { 'Content-Type': 'text/html', 'Content-Length': data.length });
     res.write(data);
@@ -118,7 +117,8 @@ app.post('/loginCheck', (req, res) => {
         res.write(data);
         res.end();
       });
-    } else {
+    } 
+    else {
       fs.readFile('./views/login.html', function (err, data) {
         res.writeHead(200, { 'Content-Type': 'text/html', 'Content-Length': data.length });
         res.write(data);
@@ -127,7 +127,7 @@ app.post('/loginCheck', (req, res) => {
           lname: req.body.lastname,
           fname: req.body.firstname,
           password:req.body.password
-        }; 
+    }; 
         const newUser2 = new newUser(data1); //instance of newuser
         newUser2.save((error)=>{
         if (error)
