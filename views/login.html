@@ -1,0 +1,73 @@
+<!-- spencer tang stang8 020505020-->
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="/css/hi.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Registration</title>
+  <meta name="author" content="Spencer Tang 020505020 STANG8">
+  <script>
+    function validationCheck() {
+      var error = true;
+      var email = document.forms["loginForm"]["email"];
+      var password = document.forms["loginForm"]["password"];
+
+
+      if (password.value == "") {
+        document.getElementById("password").innerHTML = "Please Enter your password"
+        password.focus();
+        error = false;
+      } else {
+        document.getElementById("password").innerHTML = ""
+      }
+      if (email.value == "") {
+        document.getElementById("username").innerHTML = "Please Enter a valid e-mail address."
+        email.focus();
+        error = false;
+      } else {
+        document.getElementById("username").innerHTML = ""
+      }
+
+      return error;
+    }</script>
+
+</head>
+
+<body>
+  <div class="navi">
+    <a class="" href="/home"> AirBNB </a>
+    <a class="active" href="/dashboard">Home</a>
+    <a href="/roomlist">Rooms</a>
+    <a href="/register">Sign Up</a>
+    <a href="/login">Login</a>
+  </div>
+
+  <div class="container">
+    <h2>Login</h2>
+    <p style="color:red"><%= ( error && error.message ) ? error.message : '' %></p>
+    <div class="signup card">
+      <form name="loginForm" class="card-body" action="/loginCheck" method="POST" onsubmit="return validationCheck()">
+        <input class="form-control" type="text" placeholder="Enter Email" name="email" />
+        <span class="error" id="username"><%= ( error && error.username ) ? error.username : '' %> </span>
+        <input class="form-control" type="password" placeholder="Enter Password" name="password" />
+        <span class="error" id="password"><%= ( error && error.password ) ? error.password : '' %></span>
+        <p><a href="/register">New User?</a></p>
+
+        <div class="">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

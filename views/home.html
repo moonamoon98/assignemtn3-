@@ -1,0 +1,68 @@
+<!-- spencer tang stang8 020505020-->
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/hi.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>HOMEPAGE</title>
+  <meta name="author" content="Spencer Tang">
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <div class="navi">
+    <a class="active" href="/home"> AirBNB </a>
+    <a href="/dashboard">Home</a>
+    <a href="/roomlist">Rooms</a>
+    <a href="/register">Sign Up</a>
+  </div>
+
+  <div class="container">
+    <p style="text-align: center;">Go on out and explore the world with thousands of different places to stay at your
+      fingertips</p>
+
+
+
+
+    <!--dropdown thingy -->
+    <div style="text-align: center;">
+      <label for="moof">Select :</label>
+      <select name="Rooms" id="Rooms">
+        <option value="Family">Family</option>
+        <option value="Couple">Couple</option>
+        <option value="Single">Single</option>
+        <option value="Deluxe">Deluxe</option>
+      </select>
+      <label for="start">Start date:</label>
+      <input type="date" id="start" name="trip-start" value="2020-10-22" min="2020-01-01" max="2021-12-31">
+      <label for="endt">End date:</label>
+      <input type="date" id="end" name="trip-start" value="2020-10-22" min="2020-01-01" max="2021-12-31">
+      <label for="moof">Select Number of People:</label>
+      <select name="Number of people" id="numPeeps">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+      </select>
+    </div>
+    <img src="images/explore.PNG" alt="couple" style="width: 100%;" width="500" height="400">
+  </div>
+
+  <footer class="">
+    <div class="container">
+      <p>Author: Spencer Tang</p>
+      <p>Brought to you by air bnb</p>
+      <p><a href="mailto:airbnb.com">Questions? Send us an email</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>
